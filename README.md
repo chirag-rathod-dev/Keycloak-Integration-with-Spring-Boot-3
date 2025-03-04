@@ -1,4 +1,4 @@
-# Keycloak-Integration-with-Spring-Boot-3
+# Spring Boot With Keycloak-Integration
 
 This project secures a Spring Boot application using Keycloak, an open-source Identity and Access Management tool.
 
