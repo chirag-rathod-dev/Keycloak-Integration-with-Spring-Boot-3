@@ -1,5 +1,6 @@
 package com.rathod.Keycloak.config;
 
+import com.rathod.Keycloak.converter.JwtAuthConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
