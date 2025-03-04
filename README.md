@@ -149,3 +149,25 @@ Authorization: Bearer <access_token>
 6. Make sure openid is default client scope.
 7. Click save.
 8. Try to get the user info again.
+
+## Test the API
+1. Open Postman.
+2. Create a new request.
+3. Set the request method to POST.
+4. Set the URL to http://localhost:8081/api/hello.
+5. Set the Authorization header to Bearer <access_token>.
+6. Send the request.
+7. You should get a response with the message "Hello World!". If you get a 403 Forbidden error, you need to add client scopes.
+8. If you get a 401 Unauthorized error, you need to check the access token.
+9. If you get a 500 Internal Server Error, you need to check the server logs.
+10. If you get a 200 OK response with the message "Hello World!", you have successfully secured the API using Keycloak.
+11. You can also test the API using the curl command:
+    ```bash
+    curl -X POST http://localhost:8081/api/hello -H "Authorization: Bearer <access_token>"
+    ```
+12. You should get a response with the message "Hello World!".
+
+### You have to add one more user for client_user role. PreAuthorize("hasRole('client_user')") is used in the controller.
+
+## Conclusion
+Congratulations! You have successfully secured a Spring Boot application using Keycloak. You can now use Keycloak to manage users, roles, and permissions for your application.
