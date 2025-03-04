@@ -1,6 +1,36 @@
 # Keycloak-Integration-with-Spring-Boot-3
 
-## Get started with Keycloak on Docker
+This project secures a Spring Boot application using Keycloak, an open-source Identity and Access Management tool.
+
+## Prerequisites
+1. Java 17+
+2. Maven
+3. Keycloak Server 21+
+
+## Getting Started
+Follow these steps to set up the project on your local machine for development and testing.
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/chirag-rathod-dev/Keycloak-Integration-with-Spring-Boot-3.git
+    ```
+2. Navigate into the project directory:
+    ```bash
+    cd your-repository-name
+    ```
+3. Use Maven to build the project:
+    ```bash
+    mvn clean install
+    ```
+4. You can then run the Spring Boot application using:
+    ```bash
+    mvn spring-boot:run
+
+## Keycloak Setup
+
+### Get started with Keycloak on Docker
 https://www.keycloak.org/getting-started/getting-started-docker
 
 ### Create a realm
