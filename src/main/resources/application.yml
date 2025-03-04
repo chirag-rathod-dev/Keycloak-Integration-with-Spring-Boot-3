@@ -13,5 +13,5 @@ server:
 jwt:
   auth:
     converter:
-      resource-id: myclient
+      resource-id: rest-api
       principle-attribute: preferred_username

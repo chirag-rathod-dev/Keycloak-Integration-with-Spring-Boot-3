@@ -30,6 +30,15 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
     @Value("${jwt.auth.converter.resource-id}")
     private String resourceId;
 
+    /**
+     * Convert a {@link Jwt} to a {@link AbstractAuthenticationToken}.
+     * The returned token will contain the principle claim from the JWT as the principle.
+     * The authorities will be the union of the {@link #jwtGrantedAuthoritiesConverter} and the
+     * resource roles extracted by {@link #extractResourceRoles(Jwt)}.
+     *
+     * @param jwt the JWT to convert
+     * @return the converted token
+     */
     @Override
     public AbstractAuthenticationToken convert(@NonNull Jwt jwt) {
         Collection<GrantedAuthority> authorities = Stream.concat(
@@ -44,6 +53,14 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
         );
     }
 
+    /**
+     * Returns the principle claim value from the JWT. The claim name is determined by
+     * the {@link #principleAttribute} property, or {@link JwtClaimNames#SUB} if it is
+     * not set.
+     *
+     * @param jwt the JWT to extract the principle from
+     * @return the principle claim value
+     */
     private String getPrincipleClaimName(Jwt jwt) {
         String claimName = JwtClaimNames.SUB;
         if (principleAttribute != null) {
@@ -52,6 +69,13 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
         return jwt.getClaim(claimName);
     }
 
+    /**
+     * Extract the roles from the JWT for the given resource ID.
+     *
+     * @param jwt the JWT to extract from
+     * @return a collection of {@link GrantedAuthority} representing the roles,
+     * or an empty set if the JWT does not contain the resource ID.
+     */
     private Collection<? extends GrantedAuthority> extractResourceRoles(Jwt jwt) {
         Map<String, Object> resourceAccess;
         Map<String, Object> resource;

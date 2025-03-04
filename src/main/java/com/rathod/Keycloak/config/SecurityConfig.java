@@ -20,6 +20,15 @@ public class SecurityConfig {
         this.jwtAuthConverter = jwtAuthConverter;
     }
 
+    /**
+     * A Spring Security filter chain that disables CSRF protection, requires
+     * authentication for all requests, uses JWT authentication and disables
+     * session creation.
+     *
+     * @param http the {@link HttpSecurity} object to configure
+     * @return the configured {@link SecurityFilterChain}
+     * @throws Exception if an error occurs when configuring the security filter chain
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
