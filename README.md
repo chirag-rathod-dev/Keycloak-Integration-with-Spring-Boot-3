@@ -154,7 +154,7 @@ Authorization: Bearer <access_token>
 1. Open Postman.
 2. Create a new request.
 3. Set the request method to POST.
-4. Set the URL to http://localhost:8081/api/hello.
+4. Set the URL to http://localhost:8081/api/v1/admin.
 5. Set the Authorization header to Bearer <access_token>.
 6. Send the request.
 7. You should get a response with the message "Hello World!". If you get a 403 Forbidden error, you need to add client scopes.
@@ -163,7 +163,7 @@ Authorization: Bearer <access_token>
 10. If you get a 200 OK response with the message "Hello World!", you have successfully secured the API using Keycloak.
 11. You can also test the API using the curl command:
     ```bash
-    curl -X POST http://localhost:8081/api/hello -H "Authorization: Bearer <access_token>"
+    curl -X POST http://localhost:8081//api/v1/admin -H "Authorization: Bearer <access_token>"
     ```
 12. You should get a response with the message "Hello World!".
 
