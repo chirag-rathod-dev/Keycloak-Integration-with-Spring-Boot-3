@@ -130,11 +130,8 @@
 		},
 		{
 			"name": "get-token-user",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "urlencoded",
@@ -185,7 +182,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "get-user",
 			"request": {
 				"auth": {
 					"type": "bearer",
